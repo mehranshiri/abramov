@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { postType } from "../_utils/types";
+import { generateDateFromPostId } from "../_utils/date";
 
 export const Posts = ( {
   data,
@@ -16,7 +17,7 @@ export const Posts = ( {
               <h2 data-testid={`title-${item.id}`} className="text-[28px] font-black text-[--lightLink] dark:text-[--darkLink]">
                 {item.title}
               </h2>
-              <p className="text-[13px] text-gray-700 dark:text-gray-300">January 4, 2024</p>
+              <p className="text-[13px] text-gray-700 dark:text-gray-300">{generateDateFromPostId(item.id)}</p>
               <p className="mt-1">{item.body}</p>
             </article>
           </Link>
